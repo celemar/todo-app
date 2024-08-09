@@ -163,7 +163,7 @@ export default function TodoList() {
   }
 
   return (
-    <div className="max-w-[580px] mx-auto px-5">
+    <div className="max-w-[580px] mx-auto px-6">
       <div className="relative">
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 pl-6">
           <CheckIcon />

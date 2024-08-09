@@ -37,7 +37,7 @@ export default function TodoItem({
       {...listeners}
       style={style}
       aria-label={text}
-      className="flex justify-between items-center py-3 md:py-5 border-b dark:border-[#393a4c] touch-none focusable"
+      className="flex justify-between items-center py-4 md:py-5 border-b dark:border-[#393a4c] touch-none focusable text-sm md:text-base"
     >
       <div className="flex gap-6">
         <ToggleButton

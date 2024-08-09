@@ -5,30 +5,6 @@
 :root {
   --bg-light: #fafafa;
   --bg-dark: #181824;
-
-
---dasdsa: #3a7bfd;
---sadsda: #57ddff;
-
---dasda: #57ddff;
---aaa: #c058f3;
---ads: #fafafa;
--aaaaaa: #e4e5f1;
-
-
-
-
---asas: #d2d3db;
---aaaa12: #9394a5;
---aaaa14: #484b6a;
-
---aaaa11: #161722;
---aaaa1: #25273c;
---aaaa17: #cacde8   ;     
---aaaa16: #e4e5f1 ;
---aaaa15: #777a92;
---aaaa124: #4d5067;
---aaaa12424: #393a4c;
 }
 
 body {
@@ -40,51 +16,18 @@ body {
   @apply bg-[var(--bg-dark)];
 }
 
-/* .bg-image {
-  background-image: url('/bg-desktop-dark.jpg');
-  background-size: cover;
-} */
-
-
-/* search for focusable*/
-
  @layer base {
   .focusable {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ;
   }
 } 
 
-/* Remove the default focus outline */
-button {
-  outline: none; 
-}
 
-/* Apply a gradient background and text color when the element is focused */
+
 button:focus-visible {
-/* Remove the default focus outline */
   outline: linear-gradient(#25273c, #25273c), 
   radial-gradient(circle at top left, #57ddff, #c058f3);
 }
-
-/* .check-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.5rem; 
-  height: 1.5rem; 
-  border-radius: 9999px; 
-  transition: box-shadow 0.3s;
-
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-}
-
-.check-icon:hover {
-  box-shadow: 0 0 0 3px rgba(87, 221, 255, 0.5), 0 0 0 6px rgba(192, 88, 243, 0.5);
-}
-
- */
 
 /* global.css */
 .check-icon {

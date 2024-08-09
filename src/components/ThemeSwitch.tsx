@@ -27,14 +27,14 @@ export default function ThemeSwitch() {
 
   return (
     <button 
-      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      className="focusable mb-2"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       aria-label="Toggle theme" 
     >
       {resolvedTheme === 'dark' ? (
-        <IoSunny size={30} />
+        <IoSunny size={28} />
       ) : (
-        <IoMoonSharp size={30} color="white" fill="white" />
+        <IoMoonSharp size={28} color="white" fill="white" />
       )}
     </button>
   );
