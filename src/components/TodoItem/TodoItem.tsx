@@ -60,12 +60,3 @@ export default function TodoItem({
     </li>
   );
 }
-
-/* 
-`${
-        isCompleted
-          ? "line-through text-[#d2d3db] dark:text-[#9394a5]"
-          : "text-[#777a92] dark:text-[#cacde8f4]"
-      } bold cursor-pointer flex items-center ml-6 font-bold hover:text-[#777a92] focusable
-                `
-*/

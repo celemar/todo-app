@@ -1,6 +1,5 @@
 'use client'
 import { IoMoonSharp,  IoSunny } from "react-icons/io5";
-
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Image from "next/image"
@@ -23,8 +22,6 @@ export default function ThemeSwitch() {
     />
   )
    
-
-
   return (
     <button 
       className="focusable mb-2"
@@ -38,13 +35,5 @@ export default function ThemeSwitch() {
       )}
     </button>
   );
-
-  /*   if (resolvedTheme === 'dark') {
-    return <IoSunny size={30} onClick={() => setTheme('light')} />
-  }
-
-  if (resolvedTheme === 'light') {
-    return <IoMoonSharp size={30} color="white" fillRule="white" onClick={() => setTheme('dark')} />
-  } */
 
 }

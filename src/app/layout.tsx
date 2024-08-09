@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={`${josefinSans.className} bg`}>
         <Providers>
           <Header />
-          <div className="">{children}</div>
+         <div>{children}</div>
         </Providers>
       </body>
     </html>

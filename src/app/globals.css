@@ -22,14 +22,6 @@ body {
   }
 } 
 
-
-
-button:focus-visible {
-  outline: linear-gradient(#25273c, #25273c), 
-  radial-gradient(circle at top left, #57ddff, #c058f3);
-}
-
-/* global.css */
 .check-icon {
   position: relative;
   display: flex;
@@ -69,46 +61,3 @@ button:focus-visible {
 li:hover .delete-button {
   opacity: 1;
 }
-
-/* .check-icon::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%; 
-  background: linear-gradient(to bottom right, #57ddff, #c058f3) border-box; 
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) padding-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; 
-          mask-composite: exclude; 
-}
- */
-
-/* .border-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 1.52rem; 
-  height: 1.52rem; 
-  z-index: -4;
-  background: linear-gradient(to bottom right, #57ddff, #c058f3);
-  border-radius: 50%; 
-} */
-
-/* .check-icon::after {
-  content: '';
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  width: 2rem; 
-  height: 2rem; 
-  border-radius: 9999px; 
-  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.check-icon:hover::after {
-  opacity: 1;
-} */

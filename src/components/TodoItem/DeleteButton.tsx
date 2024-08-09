@@ -23,7 +23,6 @@ export default function DeleteButton({onDelete, id}: DeleteButtonProps) {
         e.stopPropagation();
         onDelete(id);
       }}
-
       aria-label="Delete item"
       onKeyDown={handleKeyDown}
       className="delete-button mr-6 focusable focus:opacity-100 opacity-0 transition-opacity duration-300 ease-in-out"

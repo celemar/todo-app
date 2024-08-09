@@ -26,16 +26,13 @@ import {
 import TodoItem from "./TodoItem/TodoItem";
 
 export default function TodoList() {
-  const getstoredTodos = () => {
-    const storedTodos = JSON.parse(localStorage.getItem('todos') || "[]");
-    if (!storedTodos) {
-      return []
-    }
+  const getStoredTodos = () => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
     return storedTodos;
-  }
+  };
 
   //state
-  const [todos, setTodos] = useState<Todo[]>(getstoredTodos);
+  const [todos, setTodos] = useState<Todo[]>(getStoredTodos);
   const [filter, setFilter] = useState<Filter>("all");
 
   //side effects
@@ -105,14 +102,21 @@ export default function TodoList() {
   function PrimaryNav() {
     return (
       <nav>
-        <ul className="flex text-sm py-[17px] text-[#9394a5] dark:text-[#777a92] relative">
-          <li className="mr-auto ml-6 focusable" tabIndex={0}>{`${
-            todos.filter((todo) => !todo.isCompleted).length
-          } items left`}</li>
+        <ul
+          className="flex text-sm py-[17px] text-[#9394a5] dark:text-[#777a92] relative
+        justify-between"
+        >
+          <li className="ml-6 focusable" tabIndex={0}>
+            {`${todos.filter((todo) => !todo.isCompleted).length} 
+            ${todos.filter((todo) => !todo.isCompleted).length === 1 
+                ? "item"
+                : "items"
+            } left`}
+          </li>
           <div
             className="flex gap-4 
         absolute bottom-[-130%] left-50 py-4 rounded bg-[#fff] dark:bg-[#25273c] w-full justify-center
-        md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none"
+        md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center"
           >
             <li
               className={`${
@@ -152,7 +156,7 @@ export default function TodoList() {
             </li>
           </div>
 
-          <li className="ml-auto mr-6 hover:text-[#484b6a] dark:hover:text-[#d6d9e8]">
+          <li className="mr-6 hover:text-[#484b6a] dark:hover:text-[#d6d9e8]">
             <button className="focusable" onClick={clearCompletedTodos}>
               Clear Completed
             </button>
@@ -163,7 +167,7 @@ export default function TodoList() {
   }
 
   return (
-    <div className="max-w-[580px] mx-auto px-6">
+    <div className="max-w-[589px] mx-auto px-6">
       <div className="relative">
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 pl-6">
           <CheckIcon />
