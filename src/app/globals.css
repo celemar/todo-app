@@ -3,32 +3,169 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --bg-light: #fafafa;
+  --bg-dark: #181824;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+--dasdsa: #3a7bfd;
+--sadsda: #57ddff;
+
+--dasda: #57ddff;
+--aaa: #c058f3;
+--ads: #fafafa;
+-aaaaaa: #e4e5f1;
+
+
+
+
+--asas: #d2d3db;
+--aaaa12: #9394a5;
+--aaaa14: #484b6a;
+
+--aaaa11: #161722;
+--aaaa1: #25273c;
+--aaaa17: #cacde8   ;     
+--aaaa16: #e4e5f1 ;
+--aaaa15: #777a92;
+--aaaa124: #4d5067;
+--aaaa12424: #393a4c;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--bg-light);
   font-size: 1.125rem;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dark body {
+  @apply bg-[var(--bg-dark)];
 }
+
+/* .bg-image {
+  background-image: url('/bg-desktop-dark.jpg');
+  background-size: cover;
+} */
+
+
+/* search for focusable*/
+
+ @layer base {
+  .focusable {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ;
+  }
+} 
+
+/* Remove the default focus outline */
+button {
+  outline: none; 
+}
+
+/* Apply a gradient background and text color when the element is focused */
+button:focus-visible {
+/* Remove the default focus outline */
+  outline: linear-gradient(#25273c, #25273c), 
+  radial-gradient(circle at top left, #57ddff, #c058f3);
+}
+
+/* .check-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem; 
+  height: 1.5rem; 
+  border-radius: 9999px; 
+  transition: box-shadow 0.3s;
+
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.check-icon:hover {
+  box-shadow: 0 0 0 3px rgba(87, 221, 255, 0.5), 0 0 0 6px rgba(192, 88, 243, 0.5);
+}
+
+ */
+
+/* global.css */
+.check-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem; 
+  height: 1.5rem; 
+  border-radius: 9999px; 
+  transition: box-shadow 0.3s;
+}
+
+.check-icon.hover-effect::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 1.7rem; 
+  height: 1.7rem; 
+  border: double 2px transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(#ffffff, #ffffff), 
+  radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dark .check-icon.hover-effect::after {
+  background-image: linear-gradient(#25273c, #25273c), 
+  radial-gradient(circle at top left, #57ddff, #c058f3);
+}
+
+.check-icon.hover-effect:hover::after {
+  opacity: 1;
+}
+
+li:hover .delete-button {
+  opacity: 1;
+}
+
+/* .check-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%; 
+  background: linear-gradient(to bottom right, #57ddff, #c058f3) border-box; 
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; 
+          mask-composite: exclude; 
+}
+ */
+
+/* .border-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1.52rem; 
+  height: 1.52rem; 
+  z-index: -4;
+  background: linear-gradient(to bottom right, #57ddff, #c058f3);
+  border-radius: 50%; 
+} */
+
+/* .check-icon::after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 2rem; 
+  height: 2rem; 
+  border-radius: 9999px; 
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.check-icon:hover::after {
+  opacity: 1;
+} */

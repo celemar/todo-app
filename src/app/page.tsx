@@ -1,9 +1,14 @@
-import Image from "next/image";
+import dynamic from 'next/dynamic';
+
+const TodoList = dynamic(() => import('@/components/TodoList'), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
+    <main>
+      <TodoList />
+      <p className="text-sm text-[#9394a5] dark:text-[#4d5067] text-center mt-[15vh] md:mt-10">Drag and drop to reorder list</p>
     </main>
   );
 }

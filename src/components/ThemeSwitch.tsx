@@ -1,6 +1,6 @@
 'use client'
+import { IoMoonSharp,  IoSunny } from "react-icons/io5";
 
-import { FiSun, FiMoon } from "react-icons/fi"
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Image from "next/image"
@@ -22,13 +22,29 @@ export default function ThemeSwitch() {
       title="Loading Light/Dark Toggle"
     />
   )
+   
 
-  if (resolvedTheme === 'dark') {
-    return <FiSun onClick={() => setTheme('light')} />
+
+  return (
+    <button 
+      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+      aria-label="Toggle theme" 
+    >
+      {resolvedTheme === 'dark' ? (
+        <IoSunny size={30} />
+      ) : (
+        <IoMoonSharp size={30} color="white" fill="white" />
+      )}
+    </button>
+  );
+
+  /*   if (resolvedTheme === 'dark') {
+    return <IoSunny size={30} onClick={() => setTheme('light')} />
   }
 
   if (resolvedTheme === 'light') {
-    return <FiMoon onClick={() => setTheme('dark')} />
-  }
+    return <IoMoonSharp size={30} color="white" fillRule="white" onClick={() => setTheme('dark')} />
+  } */
 
 }
