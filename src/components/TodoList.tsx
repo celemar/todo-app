@@ -46,7 +46,7 @@ export default function TodoList() {
     if (!storedTodos) {
       return [];
     }
-
+    
     try {
       const parsedTodos = JSON.parse(storedTodos);
       if (Array.isArray(parsedTodos)) {
