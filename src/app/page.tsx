@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 
-// Dynamically import TodoList with { ssr: false } to disable server-side rendering
 const TodoList = dynamic(() => import('@/components/TodoList'), {
   ssr: false,
 });
