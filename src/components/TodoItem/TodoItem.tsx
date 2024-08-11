@@ -50,7 +50,7 @@ export default function TodoItem({
             isCompleted
               ? "line-through text-[#d2d3db] dark:text-[#9394a5]"
               : "text-[#777a92] dark:text-[#C8CBE7]"
-          } bold cursor-pointer flex items-center font-bold hover:text-[#777a92] focusable`}
+          } text-base md:text-lg cursor-pointer flex items-center  hover:text-[#777a92] focusable`}
         >
           {text}
         </p>

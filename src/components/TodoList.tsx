@@ -26,9 +26,37 @@ import {
 import TodoItem from "./TodoItem/TodoItem";
 
 export default function TodoList() {
-  const getStoredTodos = () => {
-    const storedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
-    return storedTodos;
+  const defaultTodos: Todo[] = [
+    { id: 1, text: "Complete online JavaScript course", isCompleted: false },
+    { id: 2, text: "Jog around the park 3x", isCompleted: false },
+    { id: 3, text: "10 minutes meditation", isCompleted: false },
+    { id: 4, text: "Read for 1 hour", isCompleted: false },
+    { id: 5, text: "Pick up groceries", isCompleted: false },
+    { id: 6, text: "Complete Todo App on Frontend Mentor", isCompleted: false }
+  ];
+  
+  const getStoredTodos = (): Todo[] => {
+    const hasInitialized = localStorage.getItem("initialized");
+    if (!hasInitialized) {
+      localStorage.setItem("todos", JSON.stringify(defaultTodos));
+      localStorage.setItem("initialized", "true");
+      return defaultTodos;
+    }
+    const storedTodos = localStorage.getItem("todos");
+    if (!storedTodos) {
+      return [];
+    }
+
+    try {
+      const parsedTodos = JSON.parse(storedTodos);
+      if (Array.isArray(parsedTodos)) {
+        return parsedTodos;
+      } else {
+        return [];
+      }
+    } catch (error) {
+      return [];
+    }
   };
 
   //state
@@ -37,7 +65,9 @@ export default function TodoList() {
 
   //side effects
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
   }, [todos]);
 
   //event handlers
@@ -45,7 +75,7 @@ export default function TodoList() {
     setTodos((prevTodos) => [
       ...prevTodos,
       {
-        id: prevTodos.length + 1,
+        id: Date.now(),
         text: newTodo,
         isCompleted: false,
       },
