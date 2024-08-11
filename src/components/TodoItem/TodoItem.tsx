@@ -36,7 +36,6 @@ export default function TodoItem({
       {...attributes}
       {...listeners}
       style={style}
-      aria-label={text}
       role="listitem"
       className="flex justify-between items-center py-4 md:py-5 border-b dark:border-[#393a4c] touch-none focusable text-sm md:text-base"
     >
