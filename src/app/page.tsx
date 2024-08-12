@@ -3,8 +3,7 @@ import dynamic from 'next/dynamic';
 const TodoList = dynamic(() => import('@/components/TodoList'), {
   ssr: false,
 });
-// ajustar animação
-// ajustar paragraph margin top
+
 export default function Home() {
   return (
     <main>

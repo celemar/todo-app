@@ -37,7 +37,7 @@ export default function TodoItem({
       {...listeners}
       style={style}
       role="listitem"
-      className="flex justify-between items-center py-4 md:py-5 border-b dark:border-[#393a4c] touch-none focusable text-sm md:text-base"
+      className="flex justify-between items-center py-4 md:py-[1.18rem] border-b dark:border-[#393a4c] touch-none focusable text-sm md:text-base"
     >
       <div className="flex gap-6">
         <ToggleButton

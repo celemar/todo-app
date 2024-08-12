@@ -32,9 +32,9 @@ export default function TodoList() {
     { id: 3, text: "10 minutes meditation", isCompleted: false },
     { id: 4, text: "Read for 1 hour", isCompleted: false },
     { id: 5, text: "Pick up groceries", isCompleted: false },
-    { id: 6, text: "Complete Todo App on Frontend Mentor", isCompleted: false }
+    { id: 6, text: "Complete Todo App on Frontend Mentor", isCompleted: false },
   ];
-  
+
   const getStoredTodos = (): Todo[] => {
     const hasInitialized = localStorage.getItem("initialized");
     if (!hasInitialized) {
@@ -46,7 +46,7 @@ export default function TodoList() {
     if (!storedTodos) {
       return [];
     }
-    
+
     try {
       const parsedTodos = JSON.parse(storedTodos);
       if (Array.isArray(parsedTodos)) {
@@ -65,7 +65,7 @@ export default function TodoList() {
 
   //side effects
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (typeof window !== "undefined" && window.localStorage) {
       localStorage.setItem("todos", JSON.stringify(todos));
     }
   }, [todos]);
@@ -133,12 +133,13 @@ export default function TodoList() {
     return (
       <nav>
         <ul
-          className="flex text-sm py-[17px] text-[#9394a5] dark:text-[#777a92] relative
+          className="flex text-sm py-4 text-[#9394a5] dark:text-[#777a92] relative
         justify-between"
         >
           <li className="ml-6 focusable">
             {`${todos.filter((todo) => !todo.isCompleted).length} 
-            ${todos.filter((todo) => !todo.isCompleted).length === 1 
+            ${
+              todos.filter((todo) => !todo.isCompleted).length === 1
                 ? "item"
                 : "items"
             } left`}
