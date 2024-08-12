@@ -128,6 +128,8 @@ export default function TodoList() {
     })
   );
 
+  const remainingTodos = todos.filter((todo) => !todo.isCompleted).length;
+
   // Nav
   function PrimaryNav() {
     return (
@@ -137,19 +139,12 @@ export default function TodoList() {
         justify-between"
         >
           <li className="ml-6 focusable">
-            {`${todos.filter((todo) => !todo.isCompleted).length} 
-            ${
-              todos.filter((todo) => !todo.isCompleted).length === 1
-                ? "item"
-                : "items"
+            {`${remainingTodos} ${
+              remainingTodos === 1 ? "item" : "items"
             } left`}
           </li>
-          <div
-            className="flex gap-[1.1rem]
-        absolute bottom-[-130%] left-50 py-4 rounded bg-[#fff] dark:bg-[#25273c] w-full justify-center
-        md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center md:ml-8"
-          >
-            <ul>
+          <li className="flex absolute bottom-[-130%] left-50 py-4 rounded bg-[#fff] dark:bg-[#25273c] w-full justify-center md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center md:ml-8">
+            <ul className="flex gap-[1.1rem]">
               <li
                 className={`${
                   filter === "all"
@@ -190,7 +185,7 @@ export default function TodoList() {
                 </button>
               </li>
             </ul>
-          </div>
+          </li>
 
           <li className="mr-6 hover:text-[#484b6a] dark:hover:text-[#d6d9e8]">
             <button className="focusable" onClick={clearCompletedTodos}>
