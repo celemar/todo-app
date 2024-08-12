@@ -149,42 +149,47 @@ export default function TodoList() {
         absolute bottom-[-130%] left-50 py-4 rounded bg-[#fff] dark:bg-[#25273c] w-full justify-center
         md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center md:ml-8"
           >
-            <li
-              className={`${
-                filter === "all"
-                  ? "text-[#3a7bfd]"
-                  : "hover:text-[#484b6a] dark:hover:text-[#e4e5f1] text-[#777a92]"
-              }`}
-            >
-              <button className="focusable" onClick={() => setFilter("all")}>
-                All
-              </button>
-            </li>
-            <li
-              className={`${
-                filter === "active"
-                  ? "text-[#3a7bfd]"
-                  : "hover:text-[#484b6a] dark:hover:text-[#e4e5f1] text-[#777a92]"
-              }`}
-            >
-              <button className="focusable" onClick={() => setFilter("active")}>
-                Active
-              </button>
-            </li>
-            <li
-              className={`${
-                filter === "completed"
-                  ? "text-[#4b7ae2]"
-                  : "hover:text-[#484b6a] dark:hover:text-[#d6d9e8] text-[#777a92]"
-              }`}
-            >
-              <button
-                className="focusable"
-                onClick={() => setFilter("completed")}
+            <ul>
+              <li
+                className={`${
+                  filter === "all"
+                    ? "text-[#3a7bfd]"
+                    : "hover:text-[#484b6a] dark:hover:text-[#e4e5f1] text-[#777a92]"
+                }`}
               >
-                Completed
-              </button>
-            </li>
+                <button className="focusable" onClick={() => setFilter("all")}>
+                  All
+                </button>
+              </li>
+              <li
+                className={`${
+                  filter === "active"
+                    ? "text-[#3a7bfd]"
+                    : "hover:text-[#484b6a] dark:hover:text-[#e4e5f1] text-[#777a92]"
+                }`}
+              >
+                <button
+                  className="focusable"
+                  onClick={() => setFilter("active")}
+                >
+                  Active
+                </button>
+              </li>
+              <li
+                className={`${
+                  filter === "completed"
+                    ? "text-[#4b7ae2]"
+                    : "hover:text-[#484b6a] dark:hover:text-[#d6d9e8] text-[#777a92]"
+                }`}
+              >
+                <button
+                  className="focusable"
+                  onClick={() => setFilter("completed")}
+                >
+                  Completed
+                </button>
+              </li>
+            </ul>
           </div>
 
           <li className="mr-6 hover:text-[#484b6a] dark:hover:text-[#d6d9e8]">
