@@ -21,7 +21,7 @@ export default function TodoItem({
   const deleteTodo = (id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
-  
+
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
 
@@ -49,13 +49,13 @@ export default function TodoItem({
             isCompleted
               ? "line-through text-[#d2d3db] dark:text-[#4d5067]"
               : "text-[#777a92] dark:text-[#C8CBE7]"
-          } text-base md:text-lg cursor-pointer flex items-center  hover:text-[#777a92]`}
+          } text-base md:text-lg cursor-pointer flex items-center hover:text-[#777a92]`}
         >
           {text}
         </p>
       </div>
 
-      <DeleteButton id={id} onDelete={() => deleteTodo(id)}  />
+      <DeleteButton id={id} onDelete={() => deleteTodo(id)} />
     </li>
   );
 }
