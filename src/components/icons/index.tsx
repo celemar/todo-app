@@ -13,7 +13,7 @@ type CheckIconProps = {
 };
 
 export const CheckIcon = ({ isCompleted, hoverEffect }: CheckIconProps) => (
-  <div
+  <span
     className={`check-icon ${hoverEffect ? "hover-effect" : ""} ${
       isCompleted
         ? "bg-gradient-to-br from-[#57ddff] to-[#c058f3]"
@@ -38,5 +38,5 @@ export const CheckIcon = ({ isCompleted, hoverEffect }: CheckIconProps) => (
         d="M1 4.304L3.696 7l6-6"
       />
     </svg>
-  </div>
+  </span>
 );
