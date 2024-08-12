@@ -23,7 +23,7 @@ export default function BackgroundImage() {
         }
         alt="Background"
         fill
-        sizes="100vw"
+        sizes="(min-width: 768px) 100vw, 0vw"
         className="object-cover hidden md:block"
         priority
       />
@@ -35,7 +35,7 @@ export default function BackgroundImage() {
         }
         alt="Background"
         fill
-        sizes="100vw"
+        sizes="(max-width: 767px) 100vw, 0vw"
         className="object-cover block md:hidden"
         priority
       />
