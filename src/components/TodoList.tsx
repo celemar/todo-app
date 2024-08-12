@@ -27,7 +27,7 @@ import TodoItem from "./TodoItem/TodoItem";
 
 export default function TodoList() {
   const defaultTodos: Todo[] = [
-    { id: 1, text: "Complete online JavaScript course", isCompleted: false },
+    { id: 1, text: "Complete online JavaScript course", isCompleted: true },
     { id: 2, text: "Jog around the park 3x", isCompleted: false },
     { id: 3, text: "10 minutes meditation", isCompleted: false },
     { id: 4, text: "Read for 1 hour", isCompleted: false },
