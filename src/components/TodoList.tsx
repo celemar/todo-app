@@ -136,7 +136,7 @@ export default function TodoList() {
           className="flex text-sm py-[17px] text-[#9394a5] dark:text-[#777a92] relative
         justify-between"
         >
-          <li className="ml-6 focusable" tabIndex={0}>
+          <li className="ml-6 focusable">
             {`${todos.filter((todo) => !todo.isCompleted).length} 
             ${todos.filter((todo) => !todo.isCompleted).length === 1 
                 ? "item"
@@ -144,9 +144,9 @@ export default function TodoList() {
             } left`}
           </li>
           <div
-            className="flex gap-4 
+            className="flex gap-[1.1rem]
         absolute bottom-[-130%] left-50 py-4 rounded bg-[#fff] dark:bg-[#25273c] w-full justify-center
-        md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center"
+        md:static md:bottom-auto md:left-auto md:py-0 md:w-auto font-bold shadow-lg md:shadow-none md:items-center md:ml-8"
           >
             <li
               className={`${
@@ -197,7 +197,7 @@ export default function TodoList() {
   }
 
   return (
-    <div className="max-w-[589px] mx-auto px-6">
+    <div className="max-w-[586px] mx-auto px-6">
       <div className="relative">
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 pl-6">
           <CheckIcon />
