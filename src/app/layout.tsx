@@ -7,8 +7,8 @@ import Header from "@/components/Header";
 const josefinSans = Josefin_Sans({ weight: ["400", "700"], preload: false });
 
 export const metadata: Metadata = {
-  title: "ToDo Next App",
-  description: "ToDo App",
+  title: "Todo Next App",
+  description: "Todo App",
 };
 
 export default function RootLayout({
