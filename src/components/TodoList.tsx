@@ -128,17 +128,16 @@ export default function TodoList() {
     })
   );
 
-  const remainingTodos = todos.filter((todo) => !todo.isCompleted).length;
-
   // Nav
   function PrimaryNav() {
+    const remainingTodos = todos.filter((todo) => !todo.isCompleted).length;
     return (
       <nav>
         <ul
           className="flex text-sm py-4 text-[#9394a5] dark:text-[#777a92] relative
         justify-between"
         >
-          <li className="ml-6 focusable">
+          <li className="ml-6">
             {`${remainingTodos} ${
               remainingTodos === 1 ? "item" : "items"
             } left`}
