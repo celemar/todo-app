@@ -36,7 +36,7 @@ export default function TodoItem({
       {...attributes}
       {...listeners}
       style={style}
-      className="flex justify-between items-center py-4 md:py-[1.18rem] border-b dark:border-[#393a4c] touch-none focusable text-sm md:text-base"
+      className="flex justify-between items-center py-4 md:py-[1.18rem] border-b dark:border-[#393a4c] touch-none text-sm md:text-base focusable"
     >
       <div className="flex gap-6">
         <ToggleButton
@@ -49,7 +49,7 @@ export default function TodoItem({
             isCompleted
               ? "line-through text-[#d2d3db] dark:text-[#4d5067]"
               : "text-[#777a92] dark:text-[#C8CBE7]"
-          } text-base md:text-lg cursor-pointer flex items-center  hover:text-[#777a92] focusable`}
+          } text-base md:text-lg cursor-pointer flex items-center  hover:text-[#777a92]`}
         >
           {text}
         </p>
