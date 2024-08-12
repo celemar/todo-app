@@ -48,7 +48,7 @@ export default function TodoItem({
         <p
           className={`${
             isCompleted
-              ? "line-through text-[#d2d3db] dark:text-[#777a92]"
+              ? "line-through text-[#d2d3db] dark:text-[#4d5067]"
               : "text-[#777a92] dark:text-[#C8CBE7]"
           } text-base md:text-lg cursor-pointer flex items-center  hover:text-[#777a92] focusable`}
         >
