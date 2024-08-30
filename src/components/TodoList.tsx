@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddTodoForm from "./AddTodoForm";
 import { Filter, Todo } from "@/lib/types";
 import { CheckIcon } from "./icons";
@@ -72,7 +72,7 @@ export default function TodoList() {
   }, [todos]);
 
   //event handlers
-  const addTodo = useCallback((newTodo: string) => {
+  const addTodo = (newTodo: string) => {
     setTodos((prevTodos) => [
       ...prevTodos,
       {
@@ -81,7 +81,7 @@ export default function TodoList() {
         isCompleted: false,
       },
     ]);
-  }, []);
+  };
 
   const clearCompletedTodos = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.isCompleted));
