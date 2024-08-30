@@ -3,6 +3,7 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import DeleteButton from "./DeleteButton";
 import ToggleButton from "./ToggleButton";
+import { useCallback } from "react";
 
 export default function TodoItem({
   setTodos,
@@ -10,17 +11,18 @@ export default function TodoItem({
   text,
   isCompleted,
 }: TodoItemProps) {
-  const toggleTodo = (id: number) => {
+
+  const toggleTodo = useCallback((id: number) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
       )
     );
-  };
+  },[]);
 
-  const deleteTodo = (id: number) => {
+  const deleteTodo = useCallback((id: number) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
-  };
+  },[]);
 
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
